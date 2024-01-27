@@ -3,8 +3,12 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
-import { provideStore } from '@ngrx/store';
+import { provideState, provideStore } from '@ngrx/store';
+import { loginReducer } from './states/signin/signin.reducer';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideClientHydration(), provideStore()]
+  providers: [provideRouter(routes), provideClientHydration(), 
+    provideStore(),
+    provideState({name: 'signin', reducer: loginReducer })
+  ]
 };
