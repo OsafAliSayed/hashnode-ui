@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --primary: #e0e0e0;
+    --secondary: #4caf50;
+    --tertiary: #1a1a1a;
+}
+body {
+    background-color: var(--tertiary);
+    /* Dark Gray */
+    color: var(--primary);
+    /* Light Gray for contrast */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary);
+    /* Slightly lighter gray for headings */
+}
+
+a {
+    color: var(--secondary);
+    /* Dark Green for links */
+}
+
+button {
+    background-color: var(--tertiary);
+    /* Darker Gray for buttons */
+    color: var(--primary);
+    /* White for button text */
+}
+
+p {
+    color: var(--primary);
+    /* Medium Gray for paragraph text */
+}
