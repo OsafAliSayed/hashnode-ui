@@ -9,6 +9,8 @@ body {
     /* Dark Gray */
     color: var(--primary);
     /* Light Gray for contrast */
+    padding: 0;
+    margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
