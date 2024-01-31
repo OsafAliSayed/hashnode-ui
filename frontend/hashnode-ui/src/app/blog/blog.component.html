@@ -1,1 +1,20 @@
-<p>blog works!</p>
+<div>
+    <div *ngIf="error">
+        <p>
+            Error: {{error}}
+        </p>
+    </div>
+
+    <div *ngIf="posts">
+        <ul>
+            <li *ngFor="let post of posts">
+                <span> {{post.node.title}}</span>
+                <span> {{post.node.brief}}</span>
+                <span> {{post.node.url}}</span>
+            </li>
+        </ul>
+
+    </div>
+
+
+</div>
