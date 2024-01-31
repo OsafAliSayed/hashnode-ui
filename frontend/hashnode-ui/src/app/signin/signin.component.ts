@@ -21,6 +21,10 @@ export class SigninComponent {
     this.logged = this.store.select(selectLogin)
   }
 
+  ngOnInIt(){
+    
+  }
+
 
   signin() {
     // Call the login API here and then implement the dispatcher inside to update the state
