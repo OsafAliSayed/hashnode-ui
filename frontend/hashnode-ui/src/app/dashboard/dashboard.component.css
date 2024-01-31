@@ -1,0 +1,45 @@
+.display {
+    border: 2px solid red;
+}
+
+.display-content {
+    border: 2px solid blue;
+    width: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    max-height: 75vh;
+}
+
+.card {
+    background-color: var(--tertiary);
+}
+.card-body .card-title {
+    text-align: left;
+    color: var(--secondary);
+    text-overflow: ellipsis;
+}
+
+.card-title {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+    padding-left: 0.5rem;
+}
+
+.card-body {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttons > * {
+    margin-top: 1rem;
+}
