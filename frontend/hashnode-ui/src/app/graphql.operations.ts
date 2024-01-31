@@ -1,17 +1,18 @@
-import { gql } from "apollo-angular";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 
-const GET_DRAFTS = gql`
-query Publication($first: Int!, $host: String) {
-    publication(host: $host) {
-      drafts(first: $first) {
-        edges {
-          node {
-            title
-          }
-        }
-      }
-    }
+@Injectable({
+  providedIn: 'root'
+})
+export class GraphQLService {
+  constructor(private http: HttpClient) { }
+  fetchData(q: string, v: any, h: any): any {
+    const url = 'https://gql.hashnode.com';
+    const query = q;
+    const variables = v;
+
+    const headers = h
+    return this.http.post(url, { query, variables }, { headers });
   }
-`
-
-export { GET_DRAFTS };
+}
