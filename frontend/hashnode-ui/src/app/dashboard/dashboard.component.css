@@ -1,9 +1,4 @@
-.display {
-    border: 2px solid red;
-}
-
 .display-content {
-    border: 2px solid blue;
     width: 100%;
     overflow-y: scroll;
     scroll-behavior: smooth;
@@ -11,7 +6,12 @@
 }
 
 .card {
+    position: relative;
     background-color: var(--tertiary);
+    /* design a cheap border */
+    border: 1px solid var(--primary);
+    z-index: 0;
+    transition: all 0.2s ease-in-out; 
 }
 .card-body .card-title {
     text-align: left;
@@ -35,12 +35,20 @@
 }
 
 .buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display:none;
+    position:absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(25%) translateY(50%);
 }
 
+.card:hover .buttons {
+    display:flex;
+    z-index: 1000;
+}
+.card:hover .card-title {
+    opacity: 0;
+}
 .buttons > * {
-    margin-top: 1rem;
+    margin-right: 1rem;
 }

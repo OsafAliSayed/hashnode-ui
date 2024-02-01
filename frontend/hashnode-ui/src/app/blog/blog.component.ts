@@ -3,12 +3,13 @@ import  { GraphQLService } from '../graphql.operations';
 import { CommonModule } from '@angular/common';
 import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 
 @Component({
   selector: 'app-blog',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, EditorModule],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.css'
 })

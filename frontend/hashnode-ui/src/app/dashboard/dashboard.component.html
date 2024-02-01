@@ -1,11 +1,11 @@
-<div class="d-flex border justify-content-around">
+<div class="d-flex justify-content-around">
     <div class="col-4 text-center display">
         <div class="display-heading">
             <h1>Draft</h1>
         </div>
         <div class="display-content">
             <!-- TODO: add ngfor loop here -->
-            <div class="card" *ngFor="let draft of drafts">
+            <div class="card m-2" *ngFor="let draft of drafts">
                 <div class="card-body">
                     <!-- TODO: Add post title here -->
                     <p class="card-title">{{draft.node.title}}</p>
@@ -18,6 +18,41 @@
             </div>
         </div>
     </div>
-    <div class="col-4 text-center display">Scheduled</div>
-    <div class="col-4 text-center display">Uploaded</div>
+    <div class="col-4 text-center display">
+        <div class="display-heading">
+            <h1>Scheduled</h1>
+        </div>
+        <div class="display-content">
+            <!-- TODO: add ngfor loop here -->
+            <div class="card" *ngFor="let post of scheduled_posts">
+                <div class="card-body">
+                    <!-- TODO: Add post title here -->
+                    <p class="card-title">{{post.node.title}}</p>
+                    <div class="buttons">
+                        <button class="btn btn-outline-success">Publish Post</button>
+                        <button class="btn btn-outline-danger">Delete</button>
+                        <button class="btn btn-outline-primary">Edit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4 text-center display">
+        <div class="display-heading">
+            <h1>Published</h1>
+        </div>
+        <div class="display-content">
+            <!-- TODO: add ngfor loop here -->
+            <div class="card" *ngFor="let post of posts">
+                <div class="card-body">
+                    <!-- TODO: Add post title here -->
+                    <p class="card-title">{{post.node.title}}</p>
+                    <div class="buttons">
+                        <button class="btn btn-outline-danger">Delete</button>
+                        <button class="btn btn-outline-primary">Edit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
