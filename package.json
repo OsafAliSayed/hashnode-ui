@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "graphql": "^16.8.1"
+    "@tinymce/tinymce-angular": "^7.0.0"
   }
 }

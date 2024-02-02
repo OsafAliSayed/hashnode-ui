@@ -1,24 +1,24 @@
 import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { AppState } from '../states/app.state';
-import { selectLogin } from '../states/signin/signin.selector';
-import { login } from '../states/signin/signin.actions';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { RequiredKeys } from '../global.variables';
 
 @Component({
   selector: 'app-signin',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.css'
 })
 
 export class SigninComponent {
-  logged: Observable<number>
+  
+  apiKey: string = "";
+  publicationId: string = "";
 
-  constructor(private store: Store<AppState>, private router: Router){
-    this.logged = this.store.select(selectLogin)
+  constructor( private router: Router ){
+    
   }
 
   ngOnInIt(){
@@ -26,11 +26,11 @@ export class SigninComponent {
   }
 
 
-  signin() {
-    // Call the login API here and then implement the dispatcher inside to update the state
-    this.store.dispatch(login())
-    this.router.navigate(['blog']);
-    console.log(this.logged)
+  signin(apiKey: string, publicationId: string) {
+    // Call the login API here and then fetch the host as well and set in RequiredKeys.host
+    RequiredKeys.apiKey = this.apiKey;
+    RequiredKeys.publicationId = this.publicationId;
+    this.router.navigate(['dashboard']);
   }
 
 }

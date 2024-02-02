@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { GET_DRAFTS, GET_SCHEDULED_DRAFTS, GET_POSTS } from '../graphql.query';
+import { RequiredKeys } from '../global.variables';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,17 +20,17 @@ export class DashboardComponent {
   posts: any[] = [];
   error: any;
   ngOnInit(): void {
-    // TODO: query should be dynamic
-    
+    console.log("DASHBOARD::", RequiredKeys);
     // TODO: variables should be dynamic
     const variables = {
       first: 20,
-      // TODO: host should be dynamic
+      // TODO: host should be dynamic - Fetch Host and add it in RequiredKeys.host
       host: 'osafalisayed.com' 
     };
 
-    // TODO: Authorization should be dynamic
-    const headers = new HttpHeaders().set('Authorization', '11bea1df-b6bd-4482-9355-b8c9e9794ab8');
+    // '11bea1df-b6bd-4482-9355-b8c9e9794ab8'
+    const headers = new HttpHeaders().set('Authorization', RequiredKeys.apiKey);
+    console.log("HEADERS", headers);
 
     this.http.fetchData(GET_DRAFTS, variables, headers).subscribe((res: any) => {
       this.drafts = res.data.publication.drafts.edges;
