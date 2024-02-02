@@ -10,9 +10,9 @@
                     <!-- TODO: Add post title here -->
                     <p class="card-title">{{draft.node.title}}</p>
                     <div class="buttons">
-                        <button class="btn btn-outline-success">Publish Post</button>
-                        <button class="btn btn-outline-danger">Delete</button>
-                        <button class="btn btn-outline-primary">Edit</button>
+                        <button class="btn btn-outline-success form-control" (click)="publishPost()">Publish Post</button>
+                        <button class="btn btn-outline-danger form-control" (click)="deletePost()">Delete</button>
+                        <button class="btn btn-outline-primary form-control" (click)="editDraftPost(draft.node.id)">Edit</button>
                     </div>
                 </div>
             </div>
@@ -29,9 +29,9 @@
                     <!-- TODO: Add post title here -->
                     <p class="card-title">{{post.node.title}}</p>
                     <div class="buttons">
-                        <button class="btn btn-outline-success">Publish Post</button>
-                        <button class="btn btn-outline-danger">Delete</button>
-                        <button class="btn btn-outline-primary">Edit</button>
+                        <button class="btn btn-outline-success form-control" (click)="publishPost()">Publish Post</button>
+                        <button class="btn btn-outline-danger form-control" (click)="deletePost()">Delete</button>
+                        <button class="btn btn-outline-primary form-control" (click)="editDraftPost(post.node.id)">Edit</button>
                     </div>
                 </div>
             </div>
@@ -48,8 +48,8 @@
                     <!-- TODO: Add post title here -->
                     <p class="card-title">{{post.node.title}}</p>
                     <div class="buttons">
-                        <button class="btn btn-outline-danger">Delete</button>
-                        <button class="btn btn-outline-primary">Edit</button>
+                        <button class="btn btn-outline-danger form-control" (click)="deletePost()">Delete</button>
+                        <button class="btn btn-outline-primary form-control" (click)="editPublishedPost(post.node.id)">Edit</button>
                     </div>
                 </div>
             </div>

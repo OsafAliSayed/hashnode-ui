@@ -1,7 +1,8 @@
 <div>
     <editor apiKey="ouak9nh1nnr293pypsjyc4a2u5eoc9c2dthlghwrn9w39l4u" [init]="{
-        plugins: 'zmentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export pageembed footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',
-        
-      }"></editor>
+        plugins: 'zmentions anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export pageembed footnotes advtemplate advtable advcode editimage tableofcontents mergetags powerpaste tinymcespellchecker autocorrect a11ychecker typography inlinecss',       
+      }" [initialValue]="postValue">
+    </editor>
 
+    <button class="btn btn-outline-success form-control" (click)="publishPost()">Publish Post</button>
 </div>
